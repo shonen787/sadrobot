@@ -4,15 +4,18 @@ use clap::Parser;
 #[derive(Parser, Debug)]
 #[command(
     author = "Christopher Sanchez", 
-    version="1.0.0", 
+    version ="1.0.0", 
     about = "Application to pull linux data", 
     long_about = None)]
 
 pub struct Args {
-    #[arg(short,long)]
+    #[arg(short,long,required = true)]
     pub path: Option<String>,
     #[arg(short,long)]
     pub os: Option<String>,
+    #[arg(long)]
+    pub output: Option<String>,
+
 }
 
 pub fn argument_init() -> Args{
